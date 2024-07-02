@@ -1,12 +1,19 @@
-from django.http import JsonResponse
+from rest_framework import viewsets
+from escola.models import Aluno,Curso
+from escola.serializer import Aluno_Serializer, Curso_Serializer
 
-def alunos(request):
-    if request.method == 'GET':
-        aluno = {
-            'id':1,
-            'nome':'Fernando'
-            }
-        
-        return JsonResponse(aluno)
-    
+class Alunos_viewset(viewsets.ModelViewSet):
+    """Exibir todos os alunos cadastrados"""
+
+    queryset = Aluno.objects.all()
+    serializer_class = Aluno_Serializer
+
+class Cursos_viewset(viewsets.ModelViewSet):
+    """Exibir todos os cursos cadastrados"""
+
+    queryset = Curso.objects.all()
+    serializer_class = Curso_Serializer
+
+
+
 
