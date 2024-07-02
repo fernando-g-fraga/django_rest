@@ -13,7 +13,7 @@ class Aluno(models.Model):
     
 class Curso(models.Model):
     NIVEL = (
-        ('B','basicos'),
+        ('B','basico'),
         ('I','intermediário'),
         ('A','Avançado'),
     )
