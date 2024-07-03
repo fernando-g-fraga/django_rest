@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from escola.views import Alunos_viewset,Cursos_viewset
+from escola.views import Alunos_viewset,Cursos_viewset, Matriculas_viewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('alunos',Alunos_viewset,'Alunos')
 router.register('cursos',Cursos_viewset,'Cursos')
+router.register('matriculas',Matriculas_viewset, 'Matriculas')
 
 
 urlpatterns = [

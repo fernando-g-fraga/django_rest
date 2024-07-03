@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from escola.models import Aluno,Curso
+from escola.models import Aluno,Curso,Matricula
 
 class Aluno_Serializer(serializers.ModelSerializer):
     class Meta:
@@ -13,4 +13,8 @@ class Curso_Serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class Matricula_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Matricula
+        exclude = []
 
